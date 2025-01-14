@@ -12,8 +12,7 @@ ln -sf libsdl_ttf.so $LOCAL_PATH/../../../obj/local/$1/libSDL_ttf.so
 JOBS=4
 
 if [ \! -f basiliskii/src/Unix/configure ] ; then
-	sh -c "cd basiliskii/src/Unix && ./autogen.sh"
-	rm -f basiliskii/src/Unix/Makefile
+	sh -c "cd basiliskii/src/Unix && NO_CONFIGURE=1 ./autogen.sh"
 fi
 
 if [ \! -f basiliskii/src/Unix/Makefile ] ; then
